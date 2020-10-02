@@ -1,5 +1,5 @@
 import numpy as np ; import matplotlib.pyplot as plt ; from matplotlib import cm
-import os ; from os import *
+import os ; from os import * ; import datetime
 #import math
 rho=1
 nx=120
@@ -31,6 +31,7 @@ frame = sframe/dt
 print("frame=",frame)
 
 seed=10
+a = datetime.datetime.now()
 
 crpth=os.path.abspath(os.getcwd())
 tv = "total_velocity" ; vxf = "Velocity_X" ; vyf = "Velocity_Y"; pr = "pressure" ###Folders names
@@ -137,4 +138,9 @@ for time in range (0,nt):
         plt.xlabel('X')
         plt.ylabel('Y');
         plt.savefig(str(pr)+"/pressure_."+str(time/frame).zfill(4)+str(time)+".png")
+        
+b = datetime.datetime.now()
+c = b-a
+print(c)
+os.system('pause')
 
